@@ -5,7 +5,7 @@
 
 @Library('github.com/gonac/ci-poc')
 
-  node ('jenkins-pipeline') {
+  node () {
 
     def pwd = pwd()
 
@@ -61,3 +61,4 @@
 
 
     }
+}
