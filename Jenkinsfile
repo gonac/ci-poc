@@ -3,7 +3,7 @@
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
 
-@Library('github.com/gonac/ci-poc')
+@Library('github.com/gonac/ci-poc@test')
 
   node () {
 
