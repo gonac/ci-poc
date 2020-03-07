@@ -3,13 +3,13 @@
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
 
-@Library('github.com/gonac/ci-poc@test')
+// @Library('github.com/gonac/ci-poc@test')
 
-  node () {
+node () {
 
-    def pwd = pwd()
+    // def pwd = pwd()
 
-    checkout scm
+    // checkout scm
 
     // Get services
 
@@ -65,4 +65,4 @@
 
 
     }
-}
+  }
