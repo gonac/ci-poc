@@ -21,8 +21,8 @@ node () {
     stage ('init') {
 
     // read in required jenkins workflow config values
-    def inputFile = readFile('Jenkinsfile.json')
-    def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
+    def config = readJSON('Jenkinsfile.json')
+    // def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
     println "pipeline config ==> ${config}"
 
     // continue only if pipeline enabled
