@@ -9,7 +9,7 @@ node () {
 
     // def pwd = pwd()
 
-    // checkout scm
+    checkout scm
 
     // Get services
 
