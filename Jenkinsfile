@@ -20,14 +20,6 @@ node () {
       defaultValue: '' //Optional, defaults to empty string
      ]
     ],
-    // genericRequestVariables: [
-    //  [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
-    //  [key: 'requestWithString', regexpFilter: '']
-    // ],
-    // genericHeaderVariables: [
-    //  [key: 'headerWithNumber', regexpFilter: '[^0-9]'],
-    //  [key: 'headerWithString', regexpFilter: '']
-    // ],
 
     causeString: 'Triggered on $ref',
 
@@ -57,49 +49,62 @@ node () {
 
     stage ('init') {
 
-    // read in required jenkins workflow config values
-    def config = readJSON(file: 'Jenkinsfile.json')
-    // def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
-    println "pipeline config ==> ${config}"
+      // read in required jenkins workflow config values
+      def config = readJSON(file: 'Jenkinsfile.json')
+      // def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
+      println "pipeline config ==> ${config}"
 
-    // continue only if pipeline enabled
-    if (!config.pipeline.enabled) {
-        println "pipeline disabled"
-        // mark build as failed
-        return
-    }
+      // continue only if pipeline enabled
+      if (!config.pipeline.enabled) {
+          println "pipeline disabled"
+          // mark build as failed
+          return
+      }
 
 
-    // If pipeline debugging enabled
-    if (config.pipeline.debug) {
-      println "DEBUG ENABLED"
-      sh "env | sort"
-    }
+      // If pipeline debugging enabled
+      if (config.pipeline.debug) {
+        println "DEBUG ENABLED"
+        sh "env | sort"
+      }
 
     }
 
     stage ('Lint') {
 
+      isPRDone("gonac", "ci-poc")
 
     }
 
     stage ('test') {
+      if (config.pipeline.lint) {
 
+        sh "make lint"
+      }
 
     }
 
     stage ('Sonar scan') {
+      if (config.pipeline.lint) {
 
+        sh "make lint"
+      }
 
     }
 
     stage ('Build and push image') {
+      if (config.pipeline.lint) {
 
+        sh "make lint"
+      }
 
     }
 
     stage ('Deploy') {
+      if (config.pipeline.lint) {
 
+        sh "make lint"
+      }
 
     }
   }
