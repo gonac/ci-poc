@@ -3,7 +3,7 @@
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
 
-// @Library('github.com/gonac/ci-poc@test')
+@Library('github.com/gonac/ci-poc@test')
 
 node () {
 
@@ -72,7 +72,7 @@ node () {
 
     stage ('Lint') {
 
-      isPRDone("gonac", "ci-poc")
+      // isPRDone("gonac", "ci-poc")
 
     }
 
