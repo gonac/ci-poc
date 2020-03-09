@@ -17,11 +17,13 @@ node () {
 
     // read config for changed services
 
+     def config = readJSON(file: 'Jenkinsfile.json')
+
 
     stage ('init') {
 
       // read in required jenkins workflow config values
-      def config = readJSON(file: 'Jenkinsfile.json')
+
       // def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
       println "pipeline config ==> ${config}"
       echo "working"
