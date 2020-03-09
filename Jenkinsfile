@@ -53,7 +53,7 @@ node () {
       def config = readJSON(file: 'Jenkinsfile.json')
       // def config = new groovy.json.JsonSlurperClassic().parseText(inputFile)
       println "pipeline config ==> ${config}"
-
+      echo "working"
       // continue only if pipeline enabled
       if (!config.pipeline.enabled) {
           println "pipeline disabled"
