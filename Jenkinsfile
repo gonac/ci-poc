@@ -3,38 +3,9 @@
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
 
-@Library('github.com/gonac/ci-poc@test')
+// @Library('github.com/gonac/ci-poc@test')
 
 node () {
-
-//    properties([
-//   pipelineTriggers([
-//    [$class: 'GenericTrigger',
-//     genericVariables: [
-//      [key: 'ref', value: '$.ref'],
-//      [
-//       key: 'before',
-//       value: '$.before',
-//       expressionType: 'JSONPath', //Optional, defaults to JSONPath
-//       regexpFilter: '', //Optional, defaults to empty string
-//       defaultValue: '' //Optional, defaults to empty string
-//      ]
-//     ],
-
-//     causeString: 'Triggered on $ref',
-
-//     token: 'abc123',
-
-//     printContributedVariables: true,
-//     printPostContent: true
-
-//     // silentResponse: false,
-
-//     // regexpFilterText: '$ref',
-//     // regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
-//    ]
-//   ])
-//  ])
 
     // def pwd = pwd()
 
