@@ -7,7 +7,32 @@
 
 node () {
 
-    // def pwd = pwd()
+
+   properties([
+  pipelineTriggers([
+   [$class: 'GenericTrigger',
+    genericVariables: [
+     [key: 'ref', value: '$.ref'],
+     [
+      key: 'before',
+      value: '$.before',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
+     ]
+    ],
+
+    causeString: 'Triggered on $ref',
+
+    token: 'abc123',
+
+    printContributedVariables: true,
+    printPostContent: true
+
+   ]
+  ])
+ ])
+
 
     checkout scm
 
