@@ -12,12 +12,11 @@ node () {
   pipelineTriggers([
    [$class: 'GenericTrigger',
     genericVariables: [
-     [key: 'action', value: '$.action'],
      [
-      key: 'before',
-      value: '$.before',
+      key: 'action',
+      value: '$.action',
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
+      regexpFilter: '^(labeled|unlabeled)$', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
      ]
     ],
