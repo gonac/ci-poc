@@ -18,6 +18,12 @@ node () {
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
       regexpFilter: '^((?!labeled|unlabeled).)*$', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
+     ] [
+      key: 'number',
+      value: '$.number',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
      ]
     ],
 
@@ -30,8 +36,8 @@ node () {
     // regexpFilterText: '^(unlabeled|labeled)$',
     // regexpFilterExpression: 'refs/heads/PR-' + env.CHANGE_ID
 
-    regexpFilterText: '$action',
-    regexpFilterExpression: '^(unlabeled|labeled)$'
+    regexpFilterText: '^($action|$number)$',
+    regexpFilterExpression: '^(unlabeled|labeled|2)$'
    ]
   ])
  ])
