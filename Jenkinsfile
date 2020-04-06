@@ -27,8 +27,11 @@ node () {
 
     printContributedVariables: true,
     printPostContent: true,
-    regexpFilterText: '^(unlabeled|labeled)$',
-    regexpFilterExpression: 'refs/heads/PR-' + env.CHANGE_ID
+    // regexpFilterText: '^(unlabeled|labeled)$',
+    // regexpFilterExpression: 'refs/heads/PR-' + env.CHANGE_ID
+
+    regexpFilterText: '$action',
+    regexpFilterExpression: '^(unlabeled|labeled)$'
    ]
   ])
  ])
