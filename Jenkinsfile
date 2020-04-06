@@ -29,7 +29,7 @@ node () {
     printContributedVariables: true,
     printPostContent: true,
     regexpFilterText: '$action',
-    regexpFilterExpression: 'refs/heads/PR-' + CHANGE_ID
+    regexpFilterExpression: 'refs/heads/PR-' + env.CHANGE_ID
    ]
   ])
  ])
