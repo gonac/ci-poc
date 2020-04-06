@@ -1,0 +1,20 @@
+{
+	"service": {
+		"name": "croc-hunter"
+	},
+	"container_repo": {
+		"host": "quay.io",
+		"master_acct": "lachie83",
+		"alt_acct": "lachie83",
+		"jenkins_creds_id": "quay_creds",
+		"repo": "croc-hunter",
+		"dockeremail": ".",
+		"dockerfile": "./",
+		"image_scanning": false
+	},
+	"config_repo": {},
+	"pipeline": {
+		"enabled": true,
+		"debug": false
+	}
+}
