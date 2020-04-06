@@ -12,7 +12,7 @@ node () {
   pipelineTriggers([
    [$class: 'GenericTrigger',
     genericVariables: [
-     [key: 'ref', value: '$.ref'],
+     [key: 'action', value: '$.action'],
      [
       key: 'before',
       value: '$.before',
@@ -22,13 +22,14 @@ node () {
      ]
     ],
 
-    causeString: 'Triggered on $ref',
+    causeString: 'Triggered on $action',
 
     token: 'abc123',
 
     printContributedVariables: true,
-    printPostContent: true
-
+    printPostContent: true,
+    regexpFilterText: '$action',
+    regexpFilterExpression: 'refs/heads/PR-' + CHANGE_ID
    ]
   ])
  ])
