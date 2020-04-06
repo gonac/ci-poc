@@ -18,7 +18,7 @@ node () {
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
       regexpFilter: '^((?!labeled|unlabeled).)*$', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
-     ] [
+     ], [
       key: 'number',
       value: '$.number',
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
